@@ -1,0 +1,17 @@
+{
+  "name": "mvc_playground",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "grunt"
+  },
+  "dependencies": {
+    "express": "3.2.4"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-express": "^1.4.0",
+    "grunt-open": "^0.2.3",
+    "grunt-bower-install": "^1.6.0"
+  }
+}

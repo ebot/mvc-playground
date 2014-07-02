@@ -1,0 +1,23 @@
+{
+  "name": "mvc_playground",
+  "version": "0.0.0",
+  "authors": [
+    "Ed Botzum <contact@edbotz.us>"
+  ],
+  "description": "A project for testing mvc frameworks",
+  "main": "app/index.html",
+  "license": "MIT",
+  "homepage": "http://edbotz.us",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "backbone": "~1.1.2",
+    "jquery": "~2.1.1",
+    "polymer": "Polymer/polymer#~0.3.3"
+  }
+}
