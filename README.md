@@ -8,7 +8,7 @@ I like polymer's unquote totrial app. Its a little more involved than the standa
 Current MVCs
 ------------
 
-* __polymer-backbone hybred__ - Polmers default app used their own MVC. HEre I have modified it slightly to use backbone, which I feel is more robust and adds other funcionality.
+* __polymer-backbone hybred__ - Polymer's default app used their own MVC. HEre I have modified it slightly to use backbone, which I feel is more robust and adds other funcionality.
 
 Running the code
 ----------------
