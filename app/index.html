@@ -16,6 +16,7 @@
     <link rel="import" href="/lib/core-header-panel/core-header-panel.html">
     <link rel="import" href="/lib/core-toolbar/core-toolbar.html">
     <link rel="import" href="/lib/paper-tabs/paper-tabs.html">
+    <link rel="import" href="/lib/paper-icon-button/paper-icon-button.html">
     <link rel="import" href="post-list.html">
 
     <link rel="shortcut icon" type="image/png" href="/images/favicon.png"/>
@@ -55,6 +56,23 @@
     .container {
       width: 80%;
       margin: 50px auto;
+      min-height: 420px;
+    }
+
+    footer {
+      background-color: #72682E;
+      color: lightgray;
+      padding: 30px 20px 50px 20px;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: white;
+      text-decoration: underline;
     }
 
     @media (min-width: 481px) {
@@ -81,6 +99,13 @@
       <div class="container" layout vertical center>
         <post-list show="all"></post-list>
       </div>
+
+      <footer>
+      A sample app with an <a href="http://expressjs.com/">express</a> web api back end and <a href="http://backbonejs.org/">backbone</a>/<a href="http://www.polymer-project.org/">polymer</a> front end.
+      <br />
+      <a href ="https://github.com/ebot/mvc-playground"><core-icon-button src="/images/gh-light.png"></core-icon-button></a>
+      Crafted by <a href="http://edbotz.us">Ed Botzum</a> 
+      </footer>
     </core-header-panel>
 
     <script>
