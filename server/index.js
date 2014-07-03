@@ -11,8 +11,9 @@ app.use(express.logger('dev'));
 app.use(express.bodyParser());
 app.use(express.methodOverride());
 app.use(app.router);
-// app.set('port', process.env.PORT || 3000);
-app.use(express.static(path.join(__dirname, '/public')));
+app.set('port', process.env.PORT || 3000);
+var public_dir = process.env.path || path.join(__dirname, '../app')
+app.use(express.static(public_dir));
 
 // Load some posts to work with
 var posts = [];
