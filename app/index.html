@@ -9,7 +9,7 @@
     <script src="lib/backbone/backbone.js"></script>
     <script src="lib/platform/platform.js"></script>
     <!-- endbower -->
-    
+
     <script src="/scripts/app.js"></script>
 
     <link rel="import" href="/lib/font-roboto/roboto.html">
@@ -28,20 +28,24 @@
       background-color: lightgray;
       font-family: 'RobotoDraft', sans-serif;
     }
+
     core-header-panel {
       height: 100%;
       overflow: auto;
       -webkit-overflow-scrolling: touch; 
     }
+
     core-toolbar {
       background: #336600;
       color: white;
     }
+
     core-toolbar span {
       text-transform: uppercase;
+      font-size: 75%
     }
     paper-tabs {
-      width: 100%;
+      width: 50%;
       -webkit-user-select: none;
       -moz-user-select: none;
       -ms-user-select: none;
@@ -74,6 +78,7 @@
       color: white;
       text-decoration: underline;
     }
+
 
     @media (min-width: 481px) {
       paper-tabs {
