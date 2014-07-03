@@ -13,33 +13,29 @@
     }
     </style>
     
-  <div layout vertical center>
-    <template repeat="{{post in posts}}">
-      <post-card
-        favorite="{{post.attributes.favorite}}"
-        on-favorite-tap="{{handleFavorite}}"
-        hidden?="{{show == 'favorites' && ! post.attributes.favorite}}">
+    <div layout vertical center>
+      <template repeat="{{post in posts}}">
+        <post-card
+          favorite="{{post.attributes.favorite}}"
+          on-favorite-tap="{{handleFavorite}}"
+          hidden?="{{show == 'favorites' && ! post.attributes.favorite}}">
 
-        <img src="{{post.attributes.avatar}}" width="70" height="70">
-        <h2>{{post.attributes.username}}</h2>
-        <p>{{post.attributes.text}}</p>
-      </post-card>
-    </template>
-  </div>
+          <img src="{{post.attributes.avatar}}" width="70" height="70">
+          <h2>{{post.attributes.username}}</h2>
+          <p>{{post.attributes.text}}</p>
+        </post-card>
+      </template>
+    </div>
   </template>
 
   <script>
     Polymer({
       ready: function() {
         this.posts = window.posts.models;
-        window.posts.fetch();
       },
       handleFavorite: function(event, detail, sender) {
-        var p = sender.templateInstance.model.post;
-        console.log(p.attributes);
-        p.save();
+        sender.templateInstance.model.post.save();
       }
     });
   </script>
-
 </polymer-element>

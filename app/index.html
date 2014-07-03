@@ -1,97 +1,95 @@
 ﻿<!doctype html>
 <html>
+  <head>
+    <title>unquote</title>
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+    <!-- bower:js -->
+    <script src="lib/jquery/dist/jquery.js"></script>
+    <script src="lib/underscore/underscore.js"></script>
+    <script src="lib/backbone/backbone.js"></script>
+    <script src="lib/platform/platform.js"></script>
+    <!-- endbower -->
+    
+    <script src="/scripts/app.js"></script>
 
-<head>
-  <title>unquote</title>
-  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
-  <!-- bower:js -->
-  <script src="lib/jquery/dist/jquery.js"></script>
-  <script src="lib/underscore/underscore.js"></script>
-  <script src="lib/backbone/backbone.js"></script>
-  <script src="lib/platform/platform.js"></script>
-  <!-- endbower -->
-  
-  <script src="/scripts/app.js"></script>
+    <link rel="import" href="/lib/font-roboto/roboto.html">
+    <link rel="import" href="/lib/core-header-panel/core-header-panel.html">
+    <link rel="import" href="/lib/core-toolbar/core-toolbar.html">
+    <link rel="import" href="/lib/paper-tabs/paper-tabs.html">
+    <link rel="import" href="post-list.html">
 
-  <link rel="import" href="/lib/font-roboto/roboto.html">
-  <link rel="import" href="/lib/core-header-panel/core-header-panel.html">
-  <link rel="import" href="/lib/core-toolbar/core-toolbar.html">
-  <link rel="import" href="/lib/paper-tabs/paper-tabs.html">
-  <link rel="import" href="post-list.html">
+    <link rel="shortcut icon" type="image/png" href="/images/favicon.png"/>
 
-  <link rel="shortcut icon" type="image/png" href="/images/favicon.png"/>
-
-  <style>
-  html,body {
-    height: 100%;
-    margin: 0;
-    background-color: lightgray;
-    font-family: 'RobotoDraft', sans-serif;
-  }
-  core-header-panel {
-    height: 100%;
-    overflow: auto;
-    -webkit-overflow-scrolling: touch; 
-  }
-  core-toolbar {
-    background: #336600;
-    color: white;
-  }
-  core-toolbar span {
-    text-transform: uppercase;
-  }
-  paper-tabs {
-    width: 100%;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    cursor: pointer;
-  }
-
-  paper-tabs::shadow #selectionBar {
-    background-color: #E3F6CE;
-  }
-
-  .container {
-    width: 80%;
-    margin: 50px auto;
-  }
-  @media (min-width: 481px) {
+    <style>
+    html,body {
+      height: 100%;
+      margin: 0;
+      background-color: lightgray;
+      font-family: 'RobotoDraft', sans-serif;
+    }
+    core-header-panel {
+      height: 100%;
+      overflow: auto;
+      -webkit-overflow-scrolling: touch; 
+    }
+    core-toolbar {
+      background: #336600;
+      color: white;
+    }
+    core-toolbar span {
+      text-transform: uppercase;
+    }
     paper-tabs {
-      width: 200px;
+      width: 100%;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      cursor: pointer;
     }
+
+    paper-tabs::shadow #selectionBar {
+      background-color: #E3F6CE;
+    }
+
     .container {
-      width: 400px;
+      width: 80%;
+      margin: 50px auto;
     }
-  }
-  </style>
-</head>
 
-<body unresolved touch-action="auto">
-  <core-header-panel mode="waterfall">
-    <core-toolbar>
-      <span flex>unquote - a polymer demo</span>
-      <paper-tabs noink valueattr="name" selected="all" self-end>
-        <paper-tab name="all">ALL</paper-tab>
-        <paper-tab name="favorites">FAVORITES</paper-tab>
-      </paper-tabs>
-    </core-toolbar>
+    @media (min-width: 481px) {
+      paper-tabs {
+        width: 200px;
+      }
+      .container {
+        width: 400px;
+      }
+    }
+    </style>
+  </head>
 
-    <div class="container" layout vertical center>
-      <post-list show="all"></post-list>
-    </div>
+  <body unresolved touch-action="auto">
+    <core-header-panel mode="waterfall">
+      <core-toolbar>
+        <span flex>unquote - a polymer demo</span>
+        <paper-tabs noink valueattr="name" selected="all" self-end>
+          <paper-tab name="all">ALL</paper-tab>
+          <paper-tab name="favorites">FAVORITES</paper-tab>
+        </paper-tabs>
+      </core-toolbar>
+
+      <div class="container" layout vertical center>
+        <post-list show="all"></post-list>
+      </div>
     </core-header-panel>
 
-  <script>
-    var tabs = document.querySelector('paper-tabs');
-    var list = document.querySelector('post-list');
+    <script>
+      var tabs = document.querySelector('paper-tabs');
+      var list = document.querySelector('post-list');
 
-    tabs.addEventListener('core-select', function() {
-      console.log("Selected: " + tabs.selected);
-      list.show = tabs.selected;
-    });
-  </script>  
-</body>
-
+      tabs.addEventListener('core-select', function() {
+        list.show = tabs.selected;
+      });
+    </script>  
+  </body>
 </html>
